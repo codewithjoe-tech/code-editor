@@ -18,33 +18,48 @@ const App = () => {
   const [panelSizes, setPanelSizes] = useState([50, 50]); // Initial sizes for panels
   
   const handleRun = async () => {
-
-
-    setLoading(true);
-    const response = await fetch('https://emkc.org/api/v2/piston/execute', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        language: language,
-        version: LANGUAGE_CONFIG[language].pistonRuntime.version,
-        files: [
-          {
-            content: code,
-          },
-        ],
-      }),
-    });
-    const data = await response.json();
-    if (data.run.stderr) {
-      setOutput({ state: "e", data: data.run.stderr });
-    } else {
-      setOutput({ state: "s", data: data.run.stdout });
+    const timeout = 10000; 
+    const controller = new AbortController(); 
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+  
+    try {
+      setLoading(true);
+      const response = await fetch('https://emkc.org/api/v2/piston/execute', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          language: language,
+          version: LANGUAGE_CONFIG[language].pistonRuntime.version,
+          files: [
+            {
+              content: code,
+            },
+          ],
+        }),
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId); 
+  
+      const data = await response.json();
+      if (data.run.stderr) {
+        setOutput({ state: "e", data: data.run.stderr });
+      } else {
+        setOutput({ state: "s", data: data.run.stdout });
+      }
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        setOutput({ state: "e", data: "Request timed out" }); 
+      } else {
+        setOutput({ state: "e", data: "An error occurred: " + error.message });
+      }
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
-
+  
   useEffect(() => {
     if (output) {
       // Adjust panel sizes dynamically when output changes
