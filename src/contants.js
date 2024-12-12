@@ -7,14 +7,7 @@ const LANGUAGE_CONFIG = {
     logoPath: "/javascript.png",
     pistonRuntime: { language: "javascript", version: "18.15.0" },
     monacoLanguage: "javascript",
-    defaultCode: `const numbers = [1, 2, 3, 4, 5];
-const squares = numbers.map(n => n * n);
-console.log('Original numbers:', numbers);
-console.log('Squared numbers:', squares);
-const evenNumbers = numbers.filter(n => n % 2 === 0);
-console.log('Even numbers:', evenNumbers);
-const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-console.log('Sum of numbers:', sum);`,
+    defaultCode: `console.log("Hello, world!");`,
   },
   python: {
     id: "python",
@@ -22,14 +15,7 @@ console.log('Sum of numbers:', sum);`,
     logoPath: "/python.png",
     pistonRuntime: { language: "python", version: "3.10.0" },
     monacoLanguage: "python",
-    defaultCode: `numbers = [1, 2, 3, 4, 5]
-squares = [n ** 2 for n in numbers]
-print(f"Original numbers: {numbers}")
-print(f"Squared numbers: {squares}")
-even_numbers = [n for n in numbers if n % 2 == 0]
-print(f"Even numbers: {even_numbers}")
-numbers_sum = sum(numbers)
-print(f"Sum of numbers: {numbers_sum}")`,
+    defaultCode: `print("Hello, world!")`,
   },
   c: {
     id: "c",
@@ -40,16 +26,7 @@ print(f"Sum of numbers: {numbers_sum}")`,
     defaultCode: `#include <stdio.h>
 
 int main() {
-    int numbers[] = {1, 2, 3, 4, 5};
-    int sum = 0;
-
-    printf("Original numbers: ");
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", numbers[i]);
-        sum += numbers[i];
-    }
-    printf("\nSum of numbers: %d\n", sum);
-
+    printf("Hello, world!\\n");
     return 0;
 }`,
   },
@@ -60,22 +37,9 @@ int main() {
     pistonRuntime: { language: "cpp", version: "10.2.0" },
     monacoLanguage: "cpp",
     defaultCode: `#include <iostream>
-#include <vector>
-#include <numeric>
 
 int main() {
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    std::vector<int> squares;
-    for (int n : numbers) squares.push_back(n * n);
-
-    std::cout << "Original numbers: ";
-    for (int n : numbers) std::cout << n << " ";
-    std::cout << "\nSquared numbers: ";
-    for (int n : squares) std::cout << n << " ";
-
-    int sum = std::accumulate(numbers.begin(), numbers.end(), 0);
-    std::cout << "\nSum of numbers: " << sum << std::endl;
-
+    std::cout << "Hello, world!" << std::endl;
     return 0;
 }`,
   },
@@ -85,19 +49,9 @@ int main() {
     logoPath: "/java.png",
     pistonRuntime: { language: "java", version: "17.0.2" },
     monacoLanguage: "java",
-    defaultCode: `import java.util.*;
-import java.util.stream.*;
-
-public class Main {
+    defaultCode: `public class Main {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> squares = numbers.stream().map(n -> n * n).collect(Collectors.toList());
-
-        System.out.println("Original numbers: " + numbers);
-        System.out.println("Squared numbers: " + squares);
-
-        int sum = numbers.stream().mapToInt(Integer::intValue).sum();
-        System.out.println("Sum of numbers: " + sum);
+        System.out.println("Hello, world!");
     }
 }`,
   },
@@ -107,15 +61,7 @@ public class Main {
     logoPath: "/ruby.png",
     pistonRuntime: { language: "ruby", version: "3.2.2" },
     monacoLanguage: "ruby",
-    defaultCode: `numbers = [1, 2, 3, 4, 5]
-squares = numbers.map { |n| n ** 2 }
-even_numbers = numbers.select { |n| n.even? }
-sum = numbers.sum
-
-puts "Original numbers: \#{numbers}"
-puts "Squared numbers: \#{squares}"
-puts "Even numbers: \#{even_numbers}"
-puts "Sum of numbers: \#{sum}"`,
+    defaultCode: `puts "Hello, world!"`,
   },
   go: {
     id: "go",
@@ -128,20 +74,7 @@ puts "Sum of numbers: \#{sum}"`,
 import "fmt"
 
 func main() {
-    numbers := []int{1, 2, 3, 4, 5}
-    squares := make([]int, len(numbers))
-    for i, n := range numbers {
-        squares[i] = n * n
-    }
-
-    sum := 0
-    for _, n := range numbers {
-        sum += n
-    }
-
-    fmt.Println("Original numbers:", numbers)
-    fmt.Println("Squared numbers:", squares)
-    fmt.Println("Sum of numbers:", sum)
+    fmt.Println("Hello, world!")
 }`,
   },
 };
