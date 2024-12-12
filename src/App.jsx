@@ -8,6 +8,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { LANGUAGE_CONFIG } from "./contants";
 
 const App = () => {
   const [output, setOutput] = useState('');
@@ -15,8 +16,10 @@ const App = () => {
   const [language, setLanguage] = useState('python');
   const [code, setCode] = useState('');
   const [panelSizes, setPanelSizes] = useState([50, 50]); // Initial sizes for panels
-
+  
   const handleRun = async () => {
+
+
     setLoading(true);
     const response = await fetch('https://emkc.org/api/v2/piston/execute', {
       method: 'POST',
@@ -25,7 +28,7 @@ const App = () => {
       },
       body: JSON.stringify({
         language: language,
-        version: '3.10.0',
+        version: LANGUAGE_CONFIG[language].pistonRuntime.version,
         files: [
           {
             content: code,

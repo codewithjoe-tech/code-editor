@@ -1,5 +1,3 @@
-// import { Monaco } from "@monaco-editor/react";
-
 const LANGUAGE_CONFIG = {
   javascript: {
     id: "javascript",
@@ -161,30 +159,29 @@ const THEME_DEFINITIONS = {
     },
   },
   "solarized-dark": {
-  base: "vs-dark",
-  inherit: true,
-  rules: [
-    { token: "comment", foreground: "586e75" },
-    { token: "string", foreground: "2aa198" },
-    { token: "keyword", foreground: "859900" },
-    { token: "number", foreground: "b58900" },
-    { token: "type", foreground: "268bd2" },
-    { token: "class", foreground: "cb4b16" },
-    { token: "function", foreground: "268bd2" },
-    { token: "variable", foreground: "839496" },
-    { token: "operator", foreground: "6c71c4" },
-  ],
-  colors: {
-    "editor.background": "#002b36",
-    "editor.foreground": "#839496",
-    "editor.lineHighlightBackground": "#073642",
-    "editorLineNumber.foreground": "#586e75",
-    "editor.selectionBackground": "#073642",
-    "editor.selectionHighlightBackground": "#073642",
-    "editorCursor.foreground": "#93a1a1",
+    base: "vs-dark",
+    inherit: true,
+    rules: [
+      { token: "comment", foreground: "586e75" },
+      { token: "string", foreground: "2aa198" },
+      { token: "keyword", foreground: "859900" },
+      { token: "number", foreground: "b58900" },
+      { token: "type", foreground: "268bd2" },
+      { token: "class", foreground: "cb4b16" },
+      { token: "function", foreground: "268bd2" },
+      { token: "variable", foreground: "839496" },
+      { token: "operator", foreground: "6c71c4" },
+    ],
+    colors: {
+      "editor.background": "#002b36",
+      "editor.foreground": "#839496",
+      "editor.lineHighlightBackground": "#073642",
+      "editorLineNumber.foreground": "#586e75",
+      "editor.selectionBackground": "#073642",
+      "editor.selectionHighlightBackground": "#073642",
+      "editorCursor.foreground": "#93a1a1",
+    },
   },
-},
-
 };
 
 const defineMonacoThemes = (monaco) => {
