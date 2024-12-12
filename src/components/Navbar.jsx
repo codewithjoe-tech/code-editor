@@ -25,9 +25,7 @@ const Navbar = ({handleRun , loading , language , setLanguage}) => {
         { id: "python", label: "Python", icon: <FaPython /> },
         { id: "c", label: "C", icon: <FaCuttlefish /> },
         { id: "cpp", label: "C++", icon: <FaCuttlefish /> },
-        { id: "java", label: "Java", icon: <FaJava /> },
-        { id: "ruby", label: "Ruby", icon: <FaGem /> },
-        { id: "go", label: "Go", icon: <FaGem /> },
+        
       ];
       
       const THEMES = [
