@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  .vs-light {
+    /* Default Theme (Light) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+  }
+
+  .vs-dark {
+    /* VS Code Dark Theme */
+    --background: 220 13% 11%;
+    --foreground: 210 10% 85%;
+    --card: 220 13% 14%;
+    --card-foreground: 210 10% 70%;
+    --primary: 210 90% 60%;
+    --primary-foreground: 210 10% 85%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 10% 70%;
+    --muted: 220 13% 25%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 210 90% 60%;
+    --accent-foreground: 220 13% 11%;
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 220 13% 11%;
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 220 13% 25%;
+  }
+
+  .github-dark {
+    /* GitHub Dark Theme */
+    --background: 210 16% 7%;
+    --foreground: 210 16% 82%;
+    --card: 210 12% 11%;
+    --card-foreground: 210 8% 50%;
+    --primary: 0 86% 68%;
+    --primary-foreground: 210 16% 82%;
+    --secondary: 210 10% 15%;
+    --secondary-foreground: 210 60% 75%;
+    --muted: 210 8% 50%;
+    --muted-foreground: 210 12% 61%;
+    --accent: 210 60% 75%;
+    --accent-foreground: 210 16% 7%;
+    --destructive: 0 86% 68%;
+    --destructive-foreground: 210 16% 7%;
+    --border: 210 10% 15%;
+    --input: 210 10% 15%;
+    --ring: 210 12% 11%;
+  }
+
+  .monokai {
+    /* Monokai Theme */
+    --background: 60 11% 15%;
+    --foreground: 60 100% 95%;
+    --card: 60 12% 24%;
+    --card-foreground: 60 8% 46%;
+    --primary: 345 86% 60%;
+    --primary-foreground: 60 100% 95%;
+    --secondary: 60 12% 30%;
+    --secondary-foreground: 120 67% 57%;
+    --muted: 60 8% 46%;
+    --muted-foreground: 60 70% 80%;
+    --accent: 270 72% 76%;
+    --accent-foreground: 60 11% 15%;
+    --destructive: 345 86% 60%;
+    --destructive-foreground: 60 11% 15%;
+    --border: 60 12% 30%;
+    --input: 60 12% 30%;
+    --ring: 60 12% 24%;
+  }
+
+  .winter-is-coming {
+    /* Winter Is Coming Theme */
+    --background: 210 100% 10%;
+    --foreground: 210 60% 85%;
+    --card: 210 50% 20%;
+    --card-foreground: 210 30% 50%;
+    --primary: 270 70% 70%;
+    --primary-foreground: 210 60% 85%;
+    --secondary: 210 25% 20%;
+    --secondary-foreground: 90 70% 70%;
+    --muted: 210 10% 45%;
+    --muted-foreground: 90 70% 70%;
+    --accent: 210 90% 75%;
+    --accent-foreground: 210 100% 10%;
+    --destructive: 15 85% 65%;
+    --destructive-foreground: 210 100% 10%;
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 210 50% 20%;
+  }
+
+  .solarized-dark {
+    /* Solarized Dark Theme */
+    --background: 193 28% 13%;
+    --foreground: 193 28% 87%;
+    --card: 193 28% 20%;
+    --card-foreground: 193 28% 67%;
+    --primary: 32 60% 60%;
+    --primary-foreground: 193 28% 87%;
+    --secondary: 193 28% 15%;
+    --secondary-foreground: 193 28% 67%;
+    --muted: 193 28% 25%;
+    --muted-foreground: 193 28% 67%;
+    --accent: 32 80% 50%;
+    --accent-foreground: 193 28% 13%;
+    --destructive: 8 84% 59%;
+    --destructive-foreground: 193 28% 13%;
+    --border: 193 28% 15%;
+    --input: 193 28% 15%;
+    --ring: 193 28% 25%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
