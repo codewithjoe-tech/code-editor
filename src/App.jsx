@@ -13,7 +13,7 @@ import { LANGUAGE_CONFIG } from "./contants";
 const App = () => {
   const [output, setOutput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [language, setLanguage] = useState('python');
+  const [language, setLanguage] = useState('javascript');
   const [code, setCode] = useState('');
   const [panelSizes, setPanelSizes] = useState([50, 50]); // Initial sizes for panels
   
